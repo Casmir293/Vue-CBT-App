@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"main.css"}
+{"version":3,"sources":["../../vue-quiz/src/assets/scss/_reset.scss","main.css"],"names":[],"mappings":"AAAA;EACE,sBAAA;EACA,UAAA;EACA,SAAA;EACA,yCAAA;ACCF;;ADEA;EACE,cAAA;EACA,UAAA;EACA,SAAA;ACCF","file":"main.css"}
