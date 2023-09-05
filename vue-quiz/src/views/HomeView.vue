@@ -16,7 +16,10 @@
         Time: 10 mins
       </h2>
       <br />
-      <button><b>Start Now</b></button>
+
+      <button>
+        <router-link to="/exercise"><b>Start Now</b></router-link>
+      </button>
     </div>
   </section>
 </template>
@@ -76,8 +79,8 @@ button {
   margin: 0 auto;
   padding: 15px 30px;
   background-color: #3fb983;
-  color: #35495e;
   border: none;
+  color: #35495e;
   border-radius: 10px;
   font-size: 1.5rem;
   cursor: pointer;
@@ -86,6 +89,15 @@ button {
     background-color: #35495e;
     color: #3fb983;
   }
+  a {
+    text-decoration: none;
+    color: #35495e;
+  }
+}
+
+button a:hover {
+  color: #3fb983;
+  transition: 1s;
 }
 
 // Media Query for Ipads
