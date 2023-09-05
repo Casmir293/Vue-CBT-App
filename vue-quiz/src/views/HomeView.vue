@@ -1,13 +1,42 @@
 <template>
-  <section class="landing-image">
+  <!-- Landing Page -->
+  <section v-if="landingPage" class="landing-image">
     <div class="landing-text">
       <h2>Take a Vue JS Test</h2>
-      <button><b>Get Started</b></button>
+      <button @click="toggleLandingPage"><b>Get Started</b></button>
+    </div>
+  </section>
+
+  <!-- Start Now -->
+  <section v-else class="landing-image">
+    <div class="landing-text">
+      <h2>
+        Questions: 20 <br />
+        <br />
+        Time: 10 mins
+      </h2>
+      <br />
+      <button><b>Start Now</b></button>
     </div>
   </section>
 </template>
 
-<script setup></script>
+<script>
+export default {
+  name: "HomeView",
+  data() {
+    return {
+      landingPage: true,
+    };
+  },
+
+  methods: {
+    toggleLandingPage() {
+      this.landingPage = false;
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .landing-image {
@@ -36,6 +65,7 @@ h2 {
   font-size: 2rem;
   color: #fff;
   letter-spacing: 5px;
+  line-height: 1.5;
   text-shadow: 3px 0px 7px rgba(81, 67, 21, 0.8),
     -3px 0px 7px rgba(81, 67, 21, 0.8), 0px 4px 7px rgba(81, 67, 21, 0.8);
 }
