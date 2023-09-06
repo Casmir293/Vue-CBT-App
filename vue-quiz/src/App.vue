@@ -1,8 +1,8 @@
 <template>
-  <section>
+  <main>
     <router-view></router-view>
     <theme-comp></theme-comp>
-  </section>
+  </main>
 </template>
 
 <script>
