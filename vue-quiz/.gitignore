@@ -28,6 +28,4 @@ coverage
 *.sw?
 
 # My private files and folders
-data/*
 data
-db.json

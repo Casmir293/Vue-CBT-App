@@ -21,16 +21,16 @@
         <section class="question">
           <p>1. How many geographical zone does Nigeria have?</p>
           <form>
-            <input type="radio" id="quest-1-a" name="quest-1" value="Three" />
+            <input type="radio" id="quest-1-a" name="quest-1" />
             <label for="quest-1-a"> &nbsp; Three</label>
             <br />
-            <input type="radio" id="quest-1-b" name="quest-1" value="Four" />
+            <input type="radio" id="quest-1-b" name="quest-1" />
             <label for="quest-1-b"> &nbsp; Four</label>
             <br />
-            <input type="radio" id="quest-1-c" name="quest-1" value="Five" />
+            <input type="radio" id="quest-1-c" name="quest-1" />
             <label for="quest-1-c"> &nbsp; Five</label>
             <br />
-            <input type="radio" id="quest-1-d" name="quest-1" value="Six" />
+            <input type="radio" id="quest-1-d" name="quest-1" />
             <label for="quest-1-d"> &nbsp; Six</label>
             <br />
           </form>
