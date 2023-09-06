@@ -1,5 +1,4 @@
 import "./assets/scss/main.scss";
-import "./components/ThemeComp.vue";
 
 import { createApp } from "vue";
 import { createPinia } from "pinia";
