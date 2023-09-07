@@ -5,8 +5,29 @@ export const useQuestionsStore = defineStore({
 
   state: () => ({
     questions: [],
-    question: null,
     loading: false,
     error: null,
   }),
+
+  getters: {
+    currentQuestion: (state) => {
+      return state.questions[0];
+    },
+  },
+
+  actions: {
+    async fetchQuestions() {
+      this.loading = true;
+      try {
+        const response = await fetch("/src/data/db.json");
+        const data = await response.json();
+        this.questions = data.questions;
+      } catch (error) {
+        console.error("Error fetching questions:", error);
+        this.error = error;
+      } finally {
+        this.loading = false;
+      }
+    },
+  },
 });

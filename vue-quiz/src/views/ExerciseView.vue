@@ -18,7 +18,7 @@
         </section>
 
         <!-- Questions -->
-        <section class="question">
+        <!-- <section class="question">
           <p>1. How many geographical zone does Nigeria have?</p>
           <form>
             <input type="radio" id="quest-1-a" name="quest-1" />
@@ -34,12 +34,36 @@
             <label for="quest-1-d"> &nbsp; Six</label>
             <br />
           </form>
+        </section> -->
+
+        <section class="question" v-if="currentQuestion">
+          <p>{{ currentQuestion.questionText }}</p>
+          <form>
+            <div
+              v-for="(option, index) in currentQuestion.options"
+              :key="index"
+            >
+              <input
+                type="radio"
+                :id="'quest-' + currentQuestion.id + '-' + option.id"
+                :name="'quest-' + currentQuestion.id"
+                :value="option.text"
+              />
+              <label :for="'quest-' + currentQuestion.id + '-' + option.id">
+                &nbsp; {{ option.text }}</label
+              >
+              <br />
+            </div>
+          </form>
         </section>
 
         <!-- Next or Submit -->
         <section>
-          <div class="next-btn">
+          <!--<div class="next-btn">
             <button><b>Next</b></button>
+          </div> -->
+          <div v-if="currentQuestion" class="next-btn">
+            <button @click="nextQuestion"><b>Next</b></button>
           </div>
           <br />
           <div class="end-test-btn">
@@ -57,7 +81,36 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { useQuestionsStore } from "../stores/questions";
+import { ref, computed, onMounted } from "vue";
+
+const questionStore = useQuestionsStore();
+const currentQuestionIndex = ref(0);
+const isLoading = ref(false);
+
+const nextQuestion = () => {
+  if (currentQuestionIndex.value < questionStore.questions.length - 1) {
+    currentQuestionIndex.value++;
+  }
+};
+
+const currentQuestion = computed(() => {
+  return questionStore.questions[currentQuestionIndex.value];
+});
+
+onMounted(async () => {
+  isLoading.value = true;
+
+  try {
+    await questionStore.fetchQuestions();
+  } catch (error) {
+    console.error("Error fetching questions:", error);
+  } finally {
+    isLoading.value = false;
+  }
+});
+</script>
 
 <style lang="scss" scoped>
 // Page Align
