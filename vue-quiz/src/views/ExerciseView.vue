@@ -71,6 +71,7 @@
 import { useQuestionsStore } from "../stores/questions";
 import { ref, computed, onMounted, watch } from "vue";
 import ResultComp from "../components/ResultComp.vue";
+import TimerComp from "../components/TimerComp.vue";
 
 const questionStore = useQuestionsStore();
 const currentQuestionIndex = ref(0);
