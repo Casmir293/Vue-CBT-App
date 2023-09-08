@@ -6,7 +6,7 @@
         src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
         alt="Vue JS Logo"
       />
-      <h2>Vue JS Quiz App</h2>
+      <h2>Vue JS CBT App</h2>
     </header>
 
     <!-- Main -->
@@ -18,25 +18,10 @@
         </section>
 
         <!-- Questions -->
-        <!-- <section class="question">
-          <p>1. How many geographical zone does Nigeria have?</p>
-          <form>
-            <input type="radio" id="quest-1-a" name="quest-1" />
-            <label for="quest-1-a"> &nbsp; Three</label>
-            <br />
-            <input type="radio" id="quest-1-b" name="quest-1" />
-            <label for="quest-1-b"> &nbsp; Four</label>
-            <br />
-            <input type="radio" id="quest-1-c" name="quest-1" />
-            <label for="quest-1-c"> &nbsp; Five</label>
-            <br />
-            <input type="radio" id="quest-1-d" name="quest-1" />
-            <label for="quest-1-d"> &nbsp; Six</label>
-            <br />
-          </form>
-        </section> -->
-
         <section class="question" v-if="currentQuestion">
+          <p class="question-number">
+            <b>Question {{ currentQuestionIndex + 1 }} of 20</b>
+          </p>
           <p>{{ currentQuestion.questionText }}</p>
           <form>
             <div
@@ -48,6 +33,8 @@
                 :id="'quest-' + currentQuestion.id + '-' + option.id"
                 :name="'quest-' + currentQuestion.id"
                 :value="option.text"
+                :checked="selectedOptions[currentQuestionIndex] === option.text"
+                @change="selectOption(option.text)"
               />
               <label :for="'quest-' + currentQuestion.id + '-' + option.id">
                 &nbsp; {{ option.text }}</label
@@ -59,14 +46,11 @@
 
         <!-- Next or Submit -->
         <section>
-          <!--<div class="next-btn">
-            <button><b>Next</b></button>
-          </div> -->
-          <div v-if="currentQuestion" class="next-btn">
+          <div v-if="currentQuestion" v-show="nextButton" class="next-btn">
             <button @click="nextQuestion"><b>Next</b></button>
           </div>
           <br />
-          <div class="end-test-btn">
+          <div @click="endTest" class="end-test-btn">
             <button><b>End Test</b></button>
           </div>
         </section>
@@ -88,11 +72,28 @@ import { ref, computed, onMounted } from "vue";
 const questionStore = useQuestionsStore();
 const currentQuestionIndex = ref(0);
 const isLoading = ref(false);
+const nextButton = ref(true);
+const selectedOptions = ref([]);
 
 const nextQuestion = () => {
   if (currentQuestionIndex.value < questionStore.questions.length - 1) {
     currentQuestionIndex.value++;
+    // selectedOptions.value[currentQuestionIndex.value] = null;
   }
+
+  if (currentQuestionIndex.value === questionStore.questions.length - 1) {
+    nextButton.value = false;
+  }
+  selectedOptions.value[currentQuestionIndex.value] = null;
+  console.log(selectedOptions);
+};
+
+const endTest = () => {
+  console.log(selectedOptions);
+};
+
+const selectOption = (option) => {
+  selectedOptions.value[currentQuestionIndex.value] = option;
 };
 
 const currentQuestion = computed(() => {
@@ -104,6 +105,7 @@ onMounted(async () => {
 
   try {
     await questionStore.fetchQuestions();
+    selectedOptions.value = Array(questionStore.questions.length).fill(null);
   } catch (error) {
     console.error("Error fetching questions:", error);
   } finally {
@@ -165,6 +167,12 @@ main {
   background-color: hsla(211, 28%, 29%, 0.1);
 }
 
+.question-number {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .next-btn {
   margin-top: 25px;
   display: flex;
@@ -180,7 +188,7 @@ main {
 .end-test-btn {
   display: flex;
   justify-content: flex-end;
-  margin: 8px 0px;
+  margin: 10px 0px 30px 0px;
   button {
     padding: 15px;
     background-color: rgba(53, 73, 94, 0.5);
