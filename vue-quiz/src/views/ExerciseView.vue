@@ -11,7 +11,7 @@
 
     <!-- Main -->
     <main>
-      <section class="frame">
+      <section v-if="questionFrame" class="question-frame">
         <!-- Timer -->
         <section class="timer">
           <span><b>10:00</b></span>
@@ -55,6 +55,8 @@
           </div>
         </section>
       </section>
+
+      <result-comp v-else />
     </main>
 
     <!-- Footer -->
@@ -68,6 +70,7 @@
 <script setup>
 import { useQuestionsStore } from "../stores/questions";
 import { ref, computed, onMounted, watch } from "vue";
+import ResultComp from "../components/ResultComp.vue";
 
 const questionStore = useQuestionsStore();
 const currentQuestionIndex = ref(0);
@@ -75,6 +78,7 @@ const isLoading = ref(false);
 const nextButton = ref(true);
 const selectedOptions = ref([]);
 const shuffledQuestions = ref([]);
+const questionFrame = ref(true);
 
 const shuffleQuestions = () => {
   shuffledQuestions.value = [...questionStore.questions].sort(
@@ -100,6 +104,7 @@ const nextQuestion = () => {
 
 const endTest = () => {
   console.log(selectedOptions);
+  questionFrame.value = false;
 };
 
 const selectOption = (option) => {
@@ -227,7 +232,7 @@ footer {
     margin-right: 25px;
   }
 
-  .frame {
+  .question-frame {
     border: 1px solid black;
     border-radius: 20px;
     position: absolute;
@@ -235,6 +240,10 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 30px;
+    font-size: 1.5rem;
+  }
+
+  button {
     font-size: 1.5rem;
   }
 }
