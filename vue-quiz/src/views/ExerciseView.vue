@@ -67,18 +67,28 @@
 
 <script setup>
 import { useQuestionsStore } from "../stores/questions";
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 
 const questionStore = useQuestionsStore();
 const currentQuestionIndex = ref(0);
 const isLoading = ref(false);
 const nextButton = ref(true);
 const selectedOptions = ref([]);
+const shuffledQuestions = ref([]);
+
+const shuffleQuestions = () => {
+  shuffledQuestions.value = [...questionStore.questions].sort(
+    () => Math.random() - 0.5
+  );
+};
+
+watch(questionStore.questions, () => {
+  shuffleQuestions();
+});
 
 const nextQuestion = () => {
   if (currentQuestionIndex.value < questionStore.questions.length - 1) {
     currentQuestionIndex.value++;
-    // selectedOptions.value[currentQuestionIndex.value] = null;
   }
 
   if (currentQuestionIndex.value === questionStore.questions.length - 1) {
@@ -97,7 +107,7 @@ const selectOption = (option) => {
 };
 
 const currentQuestion = computed(() => {
-  return questionStore.questions[currentQuestionIndex.value];
+  return shuffledQuestions.value[currentQuestionIndex.value];
 });
 
 onMounted(async () => {
@@ -105,7 +115,8 @@ onMounted(async () => {
 
   try {
     await questionStore.fetchQuestions();
-    selectedOptions.value = Array(questionStore.questions.length).fill(null);
+    shuffleQuestions();
+    selectedOptions.value = Array(shuffledQuestions.value.length).fill(null);
   } catch (error) {
     console.error("Error fetching questions:", error);
   } finally {
