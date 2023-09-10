@@ -34,7 +34,6 @@
                 :name="'quest-' + currentQuestion.id"
                 :value="option.text"
                 :checked="selectedOptions[currentQuestionIndex] === option.text"
-                @change="selectOption(option.text)"
               />
               <label :for="'quest-' + currentQuestion.id + '-' + option.id">
                 &nbsp; {{ option.text }}</label
@@ -43,7 +42,7 @@
             </div>
           </form>
         </section>
-
+        <p>Score: {{ score }}</p>
         <!-- Next or Submit -->
         <section>
           <div v-if="currentQuestion" v-show="nextButton" class="next-btn">
@@ -71,7 +70,7 @@
 import { useQuestionsStore } from "../stores/questions";
 import { ref, computed, onMounted, watch } from "vue";
 import ResultComp from "../components/ResultComp.vue";
-import TimerComp from "../components/TimerComp.vue";
+// import TimerComp from "../components/TimerComp.vue";
 
 const questionStore = useQuestionsStore();
 const currentQuestionIndex = ref(0);
@@ -80,6 +79,7 @@ const nextButton = ref(true);
 const selectedOptions = ref([]);
 const shuffledQuestions = ref([]);
 const questionFrame = ref(true);
+const score = ref(0);
 
 const shuffleQuestions = () => {
   shuffledQuestions.value = [...questionStore.questions].sort(
@@ -87,16 +87,28 @@ const shuffleQuestions = () => {
   );
 };
 
-watch(questionStore.questions, () => {
-  shuffleQuestions();
-});
+// watch(questionStore.questions, () => {
+//   shuffleQuestions();
+// });
+
+const checkAnswer = () => {
+  const selectedOption = selectedOptions.value[currentQuestionIndex.value];
+  const correctOption = shuffledQuestions.value[
+    currentQuestionIndex.value
+  ].options.find((option) => option.isCorrect);
+
+  if (selectedOption === correctOption.text) {
+    score.value++;
+  }
+};
 
 const nextQuestion = () => {
-  if (currentQuestionIndex.value < questionStore.questions.length - 1) {
+  if (currentQuestionIndex.value < shuffledQuestions.value.length - 1) {
+    checkAnswer();
     currentQuestionIndex.value++;
   }
 
-  if (currentQuestionIndex.value === questionStore.questions.length - 1) {
+  if (currentQuestionIndex.value === shuffledQuestions.value.length - 1) {
     nextButton.value = false;
   }
   selectedOptions.value[currentQuestionIndex.value] = null;
@@ -106,11 +118,12 @@ const nextQuestion = () => {
 const endTest = () => {
   console.log(selectedOptions);
   questionFrame.value = false;
+  checkAnswer();
 };
 
-const selectOption = (option) => {
-  selectedOptions.value[currentQuestionIndex.value] = option;
-};
+// const selectOption = (option) => {
+//   selectedOptions.value[currentQuestionIndex.value] = option;
+// };
 
 const currentQuestion = computed(() => {
   return shuffledQuestions.value[currentQuestionIndex.value];
