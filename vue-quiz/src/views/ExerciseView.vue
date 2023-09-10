@@ -34,6 +34,7 @@
                 :name="'quest-' + currentQuestion.id"
                 :value="option.text"
                 :checked="selectedOptions[currentQuestionIndex] === option.text"
+                @change="selectOption(option.text)"
               />
               <label :for="'quest-' + currentQuestion.id + '-' + option.id">
                 &nbsp; {{ option.text }}</label
@@ -42,7 +43,9 @@
             </div>
           </form>
         </section>
-        <p>Score: {{ score }}</p>
+        <p>Score: {{ correctScore }}</p>
+        <p>Wrong: {{ wrongAnswer }}</p>
+        <p>Unanswered: {{ unAnswered }}</p>
         <!-- Next or Submit -->
         <section>
           <div v-if="currentQuestion" v-show="nextButton" class="next-btn">
@@ -79,7 +82,9 @@ const nextButton = ref(true);
 const selectedOptions = ref([]);
 const shuffledQuestions = ref([]);
 const questionFrame = ref(true);
-const score = ref(0);
+const correctScore = ref(0);
+const wrongAnswer = ref(0);
+const unAnswered = ref(0);
 
 const shuffleQuestions = () => {
   shuffledQuestions.value = [...questionStore.questions].sort(
@@ -87,25 +92,32 @@ const shuffleQuestions = () => {
   );
 };
 
-// watch(questionStore.questions, () => {
-//   shuffleQuestions();
-// });
+watch(questionStore.questions, () => {
+  shuffleQuestions();
+});
 
-const checkAnswer = () => {
+const checkCorrectAnswer = () => {
   const selectedOption = selectedOptions.value[currentQuestionIndex.value];
   const correctOption = shuffledQuestions.value[
     currentQuestionIndex.value
   ].options.find((option) => option.isCorrect);
 
   if (selectedOption === correctOption.text) {
-    score.value++;
+    correctScore.value++;
+  } else if (selectedOption !== correctOption.text && selectedOption !== null) {
+    wrongAnswer.value++;
+  } else {
+    unAnswered.value++;
   }
 };
 
 const nextQuestion = () => {
   if (currentQuestionIndex.value < shuffledQuestions.value.length - 1) {
-    checkAnswer();
+    checkCorrectAnswer();
     currentQuestionIndex.value++;
+    console.log("Current Index:", currentQuestionIndex.value);
+    console.log("Selected Options:", selectedOptions.value);
+    console.log("correctScore:", correctScore.value);
   }
 
   if (currentQuestionIndex.value === shuffledQuestions.value.length - 1) {
@@ -118,12 +130,13 @@ const nextQuestion = () => {
 const endTest = () => {
   console.log(selectedOptions);
   questionFrame.value = false;
-  checkAnswer();
+  checkCorrectAnswer();
+  console.log("correctScore:", correctScore.value);
 };
 
-// const selectOption = (option) => {
-//   selectedOptions.value[currentQuestionIndex.value] = option;
-// };
+const selectOption = (option) => {
+  selectedOptions.value[currentQuestionIndex.value] = option;
+};
 
 const currentQuestion = computed(() => {
   return shuffledQuestions.value[currentQuestionIndex.value];
