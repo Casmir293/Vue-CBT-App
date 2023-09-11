@@ -13,9 +13,9 @@
     <p>
       <b>Unanswered- {{ unAnswered }}</b>
     </p>
-    <p><b>Used Time- 10m : 20s</b></p>
+    <p><b>Time Used- 10m : 20s</b></p>
 
-    <h1>75%</h1>
+    <h1>{{ percentage() }}%</h1>
 
     <div class="next-btn">
       <button @click="nextQuestion"><b>Review</b></button>
@@ -30,6 +30,10 @@ const { correctScore, wrongAnswer, unAnswered } = defineProps([
   "wrongAnswer",
   "unAnswered",
 ]);
+
+const percentage = () => {
+  return (correctScore * 100) / 20;
+};
 </script>
 
 <style lang="scss" scoped>

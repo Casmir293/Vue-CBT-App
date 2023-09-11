@@ -43,9 +43,7 @@
             </div>
           </form>
         </section>
-        <p>Score: {{ correctScore }}</p>
-        <p>Wrong: {{ wrongAnswer }}</p>
-        <p>Unanswered: {{ unAnswered }}</p>
+
         <!-- Next or Submit -->
         <section>
           <div v-if="currentQuestion" v-show="nextButton" class="next-btn">
@@ -111,8 +109,6 @@ const checkCorrectAnswer = () => {
     correctScore.value++;
   } else if (selectedOption !== correctOption.text && selectedOption !== null) {
     wrongAnswer.value++;
-  } else {
-    unAnswered.value++;
   }
 };
 
@@ -120,23 +116,18 @@ const nextQuestion = () => {
   if (currentQuestionIndex.value < shuffledQuestions.value.length - 1) {
     checkCorrectAnswer();
     currentQuestionIndex.value++;
-    console.log("Current Index:", currentQuestionIndex.value);
-    console.log("Selected Options:", selectedOptions.value);
-    console.log("correctScore:", correctScore.value);
   }
 
   if (currentQuestionIndex.value === shuffledQuestions.value.length - 1) {
     nextButton.value = false;
   }
   selectedOptions.value[currentQuestionIndex.value] = null;
-  console.log(selectedOptions);
 };
 
 const endTest = () => {
-  console.log(selectedOptions);
   questionFrame.value = false;
   checkCorrectAnswer();
-  console.log("correctScore:", correctScore.value);
+  unAnswered.value = 20 - (correctScore.value + wrongAnswer.value);
 };
 
 const selectOption = (option) => {
