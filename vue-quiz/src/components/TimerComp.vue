@@ -9,7 +9,9 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, defineProps, defineEmits } from "vue";
 
-const timer = ref(10 /*600*/);
+const { timer: initialTimer } = defineProps(["timer"]);
+const emits = defineEmits(["timerExpired"]);
+const timer = ref(initialTimer);
 
 const formatTime = (timeInSeconds) => {
   const minutes = Math.floor(timeInSeconds / 60);
@@ -27,7 +29,7 @@ onMounted(() => {
       timer.value--;
     } else {
       clearInterval(intervalId);
-      // Timer reached 0, you can perform any actions here
+      emits("timerExpired");
     }
   }, 1000);
 });

@@ -14,7 +14,7 @@
       <section v-if="questionFrame" class="question-frame">
         <!-- Timer -->
         <section>
-          <timer-comp />
+          <timer-comp :timer="600" @timerExpired="endTest" />
         </section>
 
         <!-- Questions -->
@@ -44,13 +44,13 @@
           </form>
         </section>
 
-        <!-- Next or Submit -->
+        <!-- Next & Submit -->
         <section>
           <div v-if="currentQuestion" v-show="nextButton" class="next-btn">
             <button @click="nextQuestion"><b>Next</b></button>
           </div>
           <br />
-          <div @click="endTest" class="end-test-btn">
+          <div @click="endTest" v-show="endTestBtn" class="end-test-btn">
             <button><b>End Test</b></button>
           </div>
         </section>
@@ -82,6 +82,7 @@ const questionStore = useQuestionsStore();
 const currentQuestionIndex = ref(0);
 const isLoading = ref(false);
 const nextButton = ref(true);
+const endTestBtn = ref(false);
 const selectedOptions = ref([]);
 const shuffledQuestions = ref([]);
 const questionFrame = ref(true);
@@ -120,6 +121,7 @@ const nextQuestion = () => {
 
   if (currentQuestionIndex.value === shuffledQuestions.value.length - 1) {
     nextButton.value = false;
+    endTestBtn.value = true;
   }
   selectedOptions.value[currentQuestionIndex.value] = null;
 };

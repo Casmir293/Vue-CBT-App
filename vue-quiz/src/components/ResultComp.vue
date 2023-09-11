@@ -7,18 +7,20 @@
     </p>
     <p>
       <b
-        >Wrong- <span class="wrong">{{ wrongAnswer }}</span></b
+        >Wrong- <span class="red">{{ wrongAnswer }}</span></b
       >
     </p>
     <p>
-      <b>Unanswered- {{ unAnswered }}</b>
+      <b
+        >Unanswered- <span class="red">{{ unAnswered }}</span></b
+      >
     </p>
     <p><b>Time Used- 10m : 20s</b></p>
 
     <h1>{{ percentage() }}%</h1>
 
-    <div class="next-btn">
-      <button @click="nextQuestion"><b>Review</b></button>
+    <div class="review-btn">
+      <button><b>Review</b></button>
     </div>
   </section>
 </template>
@@ -50,11 +52,11 @@ section {
   .correct {
     color: rgba(63, 185, 130);
   }
-  .wrong {
+  .red {
     color: red;
   }
 }
-.next-btn {
+.review-btn {
   margin-top: 25px;
   display: flex;
   justify-content: center;
