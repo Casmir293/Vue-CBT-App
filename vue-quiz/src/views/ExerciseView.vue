@@ -13,8 +13,8 @@
     <main>
       <section v-if="questionFrame" class="question-frame">
         <!-- Timer -->
-        <section class="timer">
-          <span><b>10:00</b></span>
+        <section>
+          <timer-comp />
         </section>
 
         <!-- Questions -->
@@ -76,7 +76,7 @@
 import { useQuestionsStore } from "../stores/questions";
 import { ref, computed, onMounted, watch } from "vue";
 import ResultComp from "../components/ResultComp.vue";
-// import TimerComp from "../components/TimerComp.vue";
+import TimerComp from "../components/TimerComp.vue";
 
 const questionStore = useQuestionsStore();
 const currentQuestionIndex = ref(0);
@@ -188,17 +188,6 @@ h2 {
 }
 
 // Main
-.timer {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0px;
-  span {
-    background-color: rgba(63, 185, 130, 0.5);
-    padding: 15px;
-    border-radius: 8px;
-    border: 2px double #35495e;
-  }
-}
 
 main {
   padding: 0px 15px;
