@@ -1,12 +1,18 @@
 <template>
   <section>
     <p>
-      <b>Correct- <span class="correct">15</span></b>
+      <b
+        >Correct- <span class="correct">{{ correctScore }}</span></b
+      >
     </p>
     <p>
-      <b>Wrong- <span class="wrong">3</span></b>
+      <b
+        >Wrong- <span class="wrong">{{ wrongAnswer }}</span></b
+      >
     </p>
-    <p><b>Unanswered- 2</b></p>
+    <p>
+      <b>Unanswered- {{ unAnswered }}</b>
+    </p>
     <p><b>Used Time- 10m : 20s</b></p>
 
     <h1>75%</h1>
@@ -17,7 +23,14 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref, defineProps } from "vue";
+const { correctScore, wrongAnswer, unAnswered } = defineProps([
+  "correctScore",
+  "wrongAnswer",
+  "unAnswered",
+]);
+</script>
 
 <style lang="scss" scoped>
 section {

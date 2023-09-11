@@ -57,8 +57,13 @@
           </div>
         </section>
       </section>
-
-      <result-comp v-else />
+      <section v-else>
+        <result-comp
+          :correctScore="correctScore"
+          :wrongAnswer="wrongAnswer"
+          :unAnswered="unAnswered"
+        />
+      </section>
     </main>
 
     <!-- Footer -->
