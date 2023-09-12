@@ -15,7 +15,6 @@
         >Unanswered- <span class="red">{{ unAnswered }}</span></b
       >
     </p>
-    <p><b>Time Used- 10m : 20s</b></p>
 
     <h1>{{ percentage() }}%</h1>
 
@@ -26,7 +25,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps } from "vue";
+import { defineProps } from "vue";
 const { correctScore, wrongAnswer, unAnswered } = defineProps([
   "correctScore",
   "wrongAnswer",
