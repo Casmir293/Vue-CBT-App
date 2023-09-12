@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, defineProps, defineEmits } from "vue";
+import { ref, onMounted, defineProps, defineEmits } from "vue";
 
 const { timer: initialTimer } = defineProps(["timer"]);
 const emits = defineEmits(["timerExpired"]);

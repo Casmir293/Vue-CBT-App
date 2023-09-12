@@ -11,6 +11,7 @@
   <section v-else class="landing-image">
     <div class="landing-text">
       <h2>
+        ATTEMPT ALL <br /><br />
         Questions: 20 <br />
         <br />
         Time: 10 mins
