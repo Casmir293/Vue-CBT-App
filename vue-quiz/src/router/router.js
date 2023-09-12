@@ -6,7 +6,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "home",
+      name: "Home",
       component: HomeView,
     },
     {
@@ -20,6 +20,22 @@ const router = createRouter({
       component: () => import("../views/NotFoundView.vue"),
     },
   ],
+});
+
+// Quit Test if Page is Refreshed
+let isPageRefreshed = false;
+
+router.beforeEach((to, from, next) => {
+  if (!isPageRefreshed) {
+    isPageRefreshed = true;
+    if (to.name === "Exercise") {
+      next({ name: "Home" });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
