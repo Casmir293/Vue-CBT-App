@@ -1,5 +1,6 @@
 <template>
-  <section>
+  <!-- Result Block -->
+  <section v-if="displayResult">
     <p>
       <b
         >Correct- <span class="correct">{{ correctScore }}</span></b
@@ -19,21 +20,36 @@
     <h1>{{ percentage() }}%</h1>
 
     <div class="review-btn">
-      <button><b>Review</b></button>
+      <button @click="review"><b>Review</b></button>
     </div>
   </section>
+
+  <aside v-else>
+    <review-comp />
+  </aside>
 </template>
 
 <script setup>
-import { defineProps } from "vue";
+// Import Items
+import { defineProps, ref } from "vue";
+import ReviewComp from "./ReviewComp.vue";
+
+// Declare Constants
 const { correctScore, wrongAnswer, unAnswered } = defineProps([
   "correctScore",
   "wrongAnswer",
   "unAnswered",
 ]);
+const displayResult = ref(true);
 
+// Calculate Result Percentage
 const percentage = () => {
   return (correctScore * 100) / 20;
+};
+
+// Review Botton
+const review = () => {
+  displayResult.value = false;
 };
 </script>
 

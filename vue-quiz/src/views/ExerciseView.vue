@@ -12,7 +12,7 @@
     <!-- Main -->
     <main>
       <section v-if="questionFrame" class="question-frame">
-        <!-- Timer -->
+        <!-- Timer Component-->
         <section>
           <timer-comp :timer="600" @timerExpired="endTest" />
         </section>
@@ -55,6 +55,8 @@
           </div>
         </section>
       </section>
+
+      <!-- Result Component -->
       <section v-else>
         <result-comp
           :correctScore="correctScore"
