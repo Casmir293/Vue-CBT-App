@@ -3,31 +3,27 @@
     <h2><span>Review</span></h2>
 
     <!-- Display the Shuffled Questions -->
-    <ol class="questions">
-      <li
-        v-for="question in shuffledQuestions.shuffledQuestions"
-        :key="question.id"
-        class="question-list"
-      >
-        {{ question.questionText }}
-        <ol class="option-list">
-          <li v-for="option in question.options" :key="option.id">
-            <!-- <input
-              type="radio"
-              :id="option.id"
-              :value="option.id"
-              name="options"
-            /> -->
-            <label
-              :for="option.id"
-              :style="option.isCorrect ? { backgroundColor: '#3fb98280' } : {}"
-              >{{ option.text }}</label
-            >
-          </li>
-        </ol>
-      </li>
-    </ol>
-
+    <div class="container">
+      <ol class="questions">
+        <li
+          v-for="question in shuffledQuestions.shuffledQuestions"
+          :key="question.id"
+          class="question-list"
+        >
+          {{ question.questionText }}
+          <ol class="option-list">
+            <li v-for="option in question.options" :key="option.id">
+              <label
+                :style="
+                  option.isCorrect ? { backgroundColor: '#3fb98280' } : {}
+                "
+                >{{ option.text }}</label
+              >
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </div>
     <router-link to="/"><b>Return Home</b></router-link>
   </aside>
 </template>
@@ -77,5 +73,23 @@ a {
   display: flex;
   justify-content: center;
   padding: 10px;
+}
+
+// Media Query for IPads
+@media (min-width: 576px) {
+  .container {
+    margin: 10px 120px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 30px 60px;
+    font-size: 1.5rem;
+  }
+}
+
+// Media Query for Laptops
+@media (min-width: 992px) {
+  .container {
+    margin: 40px 400px;
+  }
 }
 </style>
