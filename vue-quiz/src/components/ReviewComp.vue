@@ -1,30 +1,34 @@
 <template>
-  <aside>
+  <aside class="review">
     <h2><span>Review</span></h2>
-    <!-- Display the shuffled questions here -->
-    <div v-for="(questionItem, index) in shuffledQuestions" :key="index">
-      <p>
-        <b>Question {{ index + 1 }}:</b>
-        {{ questionItem.questionText }}
-      </p>
-      <ul>
-        <li
-          v-for="(option, optionIndex) in questionItem.options"
-          :key="optionIndex"
-        >
-          <input
-            type="radio"
-            :id="'review-' + questionItem.id + '-' + option.id"
-            :name="'review-' + questionItem.id"
-            :value="option.text"
-            :checked="selectedOptions[index] === option.text"
-          />
-          <label :for="'review-' + questionItem.id + '-' + option.id">
-            &nbsp; {{ option.text }}
-          </label>
-        </li>
-      </ul>
-    </div>
+
+    <!-- Display the Shuffled Questions -->
+    <ol class="questions">
+      <li
+        v-for="question in shuffledQuestions.shuffledQuestions"
+        :key="question.id"
+        class="question-list"
+      >
+        {{ question.questionText }}
+        <ol class="option-list">
+          <li v-for="option in question.options" :key="option.id">
+            <!-- <input
+              type="radio"
+              :id="option.id"
+              :value="option.id"
+              name="options"
+            /> -->
+            <label
+              :for="option.id"
+              :style="option.isCorrect ? { backgroundColor: '#3fb98280' } : {}"
+              >{{ option.text }}</label
+            >
+          </li>
+        </ol>
+      </li>
+    </ol>
+
+    <router-link to="/"><b>Return Home</b></router-link>
   </aside>
 </template>
 
@@ -42,10 +46,36 @@ h2 {
   justify-content: center;
   margin: 20px 0px;
   span {
-    background-color: rgba(63, 185, 130, 0.5);
+    background-color: #3fb98280;
     padding: 15px;
     border-radius: 8px;
     border: 2px double #35495e;
   }
+}
+
+.review {
+  margin: 5px 12px;
+}
+
+.option-list {
+  list-style-type: upper-alpha;
+  margin-left: 15px;
+}
+
+.questions {
+  margin-bottom: 15px;
+  li {
+    margin-bottom: 5px;
+  }
+  .question-list {
+    margin-bottom: 20px;
+  }
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 </style>
