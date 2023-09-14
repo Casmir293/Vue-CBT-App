@@ -29,8 +29,10 @@
 </template>
 
 <script setup>
+// Import Features
 import { defineProps } from "vue";
 
+// Declear Constants
 const shuffledQuestions = defineProps({
   shuffledQuestions: Array,
 });
