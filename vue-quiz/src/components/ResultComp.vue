@@ -25,7 +25,7 @@
   </section>
 
   <aside v-else>
-    <review-comp />
+    <review-comp :shuffledQuestions="shuffledQuestions" />
   </aside>
 </template>
 
@@ -35,11 +35,13 @@ import { defineProps, ref } from "vue";
 import ReviewComp from "./ReviewComp.vue";
 
 // Declare Constants
-const { correctScore, wrongAnswer, unAnswered } = defineProps([
-  "correctScore",
-  "wrongAnswer",
-  "unAnswered",
-]);
+const { correctScore, wrongAnswer, unAnswered, shuffledQuestions } =
+  defineProps([
+    "correctScore",
+    "wrongAnswer",
+    "unAnswered",
+    "shuffledQuestions",
+  ]);
 const displayResult = ref(true);
 
 // Calculate Result Percentage

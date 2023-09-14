@@ -62,6 +62,7 @@
           :correctScore="correctScore"
           :wrongAnswer="wrongAnswer"
           :unAnswered="unAnswered"
+          :shuffledQuestions="shuffledQuestions"
         />
       </section>
     </main>
