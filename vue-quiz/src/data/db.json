@@ -647,6 +647,864 @@
     },
     {
       "id": 26,
+      "questionText": "Which of the following is NOT a Vue.js lifecycle hook?",
+      "options": [
+        {
+          "id": "a",
+          "text": "beforeCreate",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "beforeMount",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "afterUpdate",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "afterDestroy",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "questionText": "What is the Vue.js CLI command to create a new Vue.js project?",
+      "options": [
+        {
+          "id": "a",
+          "text": "vue new project-name",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "create-vue-app project-name",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "npm init vue-app project-name",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "vue create project-name",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "questionText": "What is Vue Router used for?",
+      "options": [
+        {
+          "id": "a",
+          "text": "State management",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Form handling",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Creating routes in Vue.js applications",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Component communication",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "questionText": "What is the purpose of the Vue.js Vuex library?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Handling form validation",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Managing global state in Vue applications",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Styling Vue components",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Routing in Vue applications",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "questionText": "What does the 'v-bind' directive do in Vue.js?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bind an attribute to an expression",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Create a computed property",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Conditionally render an element",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Define a method",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "questionText": "Which Vue.js feature allows you to reuse a template element in multiple places?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Scoped CSS",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Vue Slots",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Vue Components",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Vue Directives",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "questionText": "Which Vue.js lifecycle hook is used to fetch data from an API?",
+      "options": [
+        {
+          "id": "a",
+          "text": "mounted",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "created",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "beforeMount",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "updated",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "questionText": "What is the purpose of the 'v-model' directive in Vue.js?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Define a computed property",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Bind an attribute to an expression",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Create a two-way binding between a form input and a data property",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Conditionally render an element",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "questionText": "What does the 'v-for' directive do in Vue.js?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bind an attribute to an expression",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Create a computed property",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Conditionally render an element",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Render a list of items based on an array",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "questionText": "What is the purpose of the 'key' attribute when using 'v-for' in Vue.js?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It specifies the value to be used in the 'v-model' directive",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "It uniquely identifies each item in the rendered list",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "It defines a computed property",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "It specifies the attribute to bind with 'v-bind'",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "questionText": "Which Vue.js feature allows you to define custom logic for handling user events?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vue Directives",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Vue Methods",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Vue Components",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Vue Router",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "questionText": "What is the purpose of Vue.js mixins?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To create custom directives",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To share reusable logic among Vue components",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "To define computed properties",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To create custom transitions",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "questionText": "What is the Vue.js directive used to conditionally render an element if a condition is true?",
+      "options": [
+        {
+          "id": "a",
+          "text": "v-if",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "v-for",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "v-else",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "v-show",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "questionText": "What does the Vue.js 'computed' property do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It holds reactive data",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "It stores methods for a Vue component",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "It calculates and caches a computed value based on reactive data",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "It renders a list of items",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "questionText": "What is the purpose of the 'v-on' directive in Vue.js?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To conditionally render an element",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To define a computed property",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To bind an event listener to an element",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "To create a two-way binding between a form input and a data property",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "questionText": "What is Vue.js used for?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Server-side rendering",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Building user interfaces",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Database management",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Machine learning",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "questionText": "What is Vue.js's core library called?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vue.js Core",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Vue.js Base",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Vue.js Framework",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Vue.js Runtime",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "questionText": "Which of the following is a Vue.js router mode?",
+      "options": [
+        {
+          "id": "a",
+          "text": "History mode",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Debug mode",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Development mode",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Testing mode",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "questionText": "In Vue.js, what is the purpose of the 'v-bind' directive?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To bind the value of an input field to a data property",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "To conditionally render an element",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To create a computed property",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To define methods for a component",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "questionText": "In Vue.js, which directive is used to render a list of items?",
+      "options": [
+        {
+          "id": "a",
+          "text": "v-show",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "v-bind",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "v-for",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "v-model",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "questionText": "What is the purpose of the 'beforeDestroy' lifecycle hook in a Vue component?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To initialize data properties",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To perform cleanup before the component is destroyed",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "To define computed properties",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To render the component",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "questionText": "What is the purpose of Vue.js directives?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To define computed properties",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To add custom methods to a Vue component",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To manipulate the DOM and apply reactive behavior to the rendered content",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "To create Vue instances",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "questionText": "What is the purpose of the 'v-model' directive in Vue.js?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To conditionally render an element",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To bind an event listener to an element",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To create a two-way binding between a form input and a data property",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "To define computed properties",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "questionText": "Which Vue.js lifecycle hook is called after the component's DOM has been updated?",
+      "options": [
+        {
+          "id": "a",
+          "text": "beforeCreate",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "created",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "beforeUpdate",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "updated",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "questionText": "What is the purpose of the 'nextTick' method in Vue.js?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To schedule a callback to be executed after the next DOM update cycle",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "To advance the virtual DOM to the next state",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To force an immediate DOM update",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To trigger a reactivity update",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "questionText": "What is the purpose of the 'key' attribute when using 'v-for'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To define a unique identifier for each item in the list",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "To specify the order of items in the list",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To filter items in the list",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To apply custom styling to each item",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "questionText": "What does the 'v-once' directive do in Vue.js?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It binds an element's value to a data property",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "It renders an element and its children only once, and does not re-render them",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "It creates a two-way binding between a form input and a data property",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "It defines a computed property",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "questionText": "What is the purpose of the 'v-cloak' directive?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To hide an element until it's ready to be displayed",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To prevent an element's content from being compiled",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To keep an element and its children hidden until Vue's compilation is done",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "To conditionally render an element",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "questionText": "Which Vue.js lifecycle hook is used to fetch data from an API when a component is created?",
+      "options": [
+        {
+          "id": "a",
+          "text": "created",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "beforeCreate",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "mounted",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "updated",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "questionText": "What is the purpose of the 'v-pre' directive in Vue.js?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To pre-render an element's content on the server",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To prevent an element and its children from being compiled",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "To apply custom styling to an element",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To conditionally render an element",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "questionText": "What does the 'ref' attribute allow you to do in Vue.js?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To reference a DOM element or child component",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "To define a computed property",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To create a two-way binding between a form input and a data property",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To conditionally render an element",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "questionText": "What is the purpose of the 'v-slot' directive?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To bind an element's value to a data property",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To create custom event listeners",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To define named slots in a Vue component",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "To conditionally render an element",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "questionText": "What is the purpose of the 'v-bind:key' directive when using 'v-for' to render a list of elements?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To specify the order of items in the list",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To bind a unique identifier to each item in the list",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "To define the list data source",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To apply custom styling to each item",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 59,
       "questionText": "Which special tag is used to make dynamic components in Vue?",
       "options": [
         {
@@ -672,7 +1530,7 @@
       ]
     },
     {
-      "id": 27,
+      "id": 60,
       "questionText": "Which attribute is used with the <component> tag so that we can switch between components?",
       "options": [
         {
