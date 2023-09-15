@@ -25,6 +25,7 @@ To get started with the Vue.js CBT App, follow these steps:
 
    ```bash
    git clone https://github.com/casmir293/vue-cbt-app.git
+
    cd vue-cbt-app
 
    ```
