@@ -25,20 +25,13 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: "HomeView",
-  data() {
-    return {
-      landingPage: true,
-    };
-  },
+<script setup>
+import { ref } from "vue";
 
-  methods: {
-    toggleLandingPage() {
-      this.landingPage = false;
-    },
-  },
+const landingPage = ref(true);
+
+const toggleLandingPage = () => {
+  landingPage.value = false;
 };
 </script>
 

@@ -7,6 +7,8 @@
   </div>
 </template>
 
+<script setup></script>
+
 <style lang="scss" scoped>
 .image {
   background-image: url("/images/background.jpeg");

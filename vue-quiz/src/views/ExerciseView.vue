@@ -76,11 +76,13 @@
 </template>
 
 <script setup>
+// Import Items
 import { useQuestionsStore } from "../stores/questions";
 import { ref, computed, onMounted, watch } from "vue";
 import ResultComp from "../components/ResultComp.vue";
 import TimerComp from "../components/TimerComp.vue";
 
+// Declear Constants
 const questionStore = useQuestionsStore();
 const currentQuestionIndex = ref(0);
 const isLoading = ref(false);
@@ -100,10 +102,12 @@ const shuffleQuestions = () => {
   shuffledQuestions.value = shuffledAllQuestions.slice(0, 20);
 };
 
+// Reshuffle questions if there is a change in questionStore
 watch(questionStore.questions, () => {
   shuffleQuestions();
 });
 
+// Check for correct answers and assign score
 const checkCorrectAnswer = () => {
   const selectedOption = selectedOptions.value[currentQuestionIndex.value];
   const correctOption = shuffledQuestions.value[
@@ -117,6 +121,7 @@ const checkCorrectAnswer = () => {
   }
 };
 
+// Next Question
 const nextQuestion = () => {
   if (currentQuestionIndex.value < shuffledQuestions.value.length - 1) {
     checkCorrectAnswer();
@@ -130,20 +135,24 @@ const nextQuestion = () => {
   selectedOptions.value[currentQuestionIndex.value] = null;
 };
 
+// Submit
 const endTest = () => {
   questionFrame.value = false;
   checkCorrectAnswer();
   unAnswered.value = 20 - (correctScore.value + wrongAnswer.value);
 };
 
+// Select single option per question
 const selectOption = (option) => {
   selectedOptions.value[currentQuestionIndex.value] = option;
 };
 
+// Display single question at a time
 const currentQuestion = computed(() => {
   return shuffledQuestions.value[currentQuestionIndex.value];
 });
 
+// Fetch questions
 onMounted(async () => {
   isLoading.value = true;
 

@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-// Import Features
+// Import Items
 import { defineProps } from "vue";
 
 // Declear Constants

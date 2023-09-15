@@ -24,6 +24,7 @@
     </div>
   </section>
 
+  <!-- Review Component -->
   <aside v-else>
     <review-comp :shuffledQuestions="shuffledQuestions" />
   </aside>
@@ -73,6 +74,7 @@ section {
     color: red;
   }
 }
+
 .review-btn {
   margin-top: 25px;
   display: flex;
