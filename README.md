@@ -15,7 +15,7 @@ The Vue.js CBT App is an interactive web application designed to help individual
 - **Result Display:** Displays detailed results, including the number of questions answered correctly, incorrectly, and left unanswered, along with the candidate's total score percentage.
 - **Review Section:** Allows candidates to review and learn from their mistakes by revisiting incorrect answers.
 - **Wide Question Source:** Questions are sourced from various reputable platforms, including W3Schools and other educational resources.
-- **Accessible Online:** Access the Vue.js CBT App at [vueCBT.casmir.dev](https://vueCBT.casmir.dev).
+- **Accessible Online:** Access the Vue.js CBT App at [vuecbt.casmir.dev](https://vuecbt.casmir.dev).
 
 ## Getting Started
 
@@ -48,7 +48,7 @@ To get started with the Vue.js CBT App, follow these steps:
 
 ## Usage
 
-1. Sign in to the Vue.js CBT App at [vueCBT.casmir.dev](https://vueCBT.casmir.dev).
+1. Sign in to the Vue.js CBT App at [vuecbt.casmir.dev](https://vuecbt.casmir.dev).
 2. Begin the test, and the timer will start counting down.
 3. Answer each question by selecting the appropriate option.
 4. Click "Next" to proceed to the next question.

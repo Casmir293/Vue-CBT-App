@@ -19,7 +19,9 @@ export const useQuestionsStore = defineStore({
     async fetchQuestions() {
       this.loading = true;
       try {
-        const response = await fetch("/src/data/db.json");
+        const response = await fetch(
+          "https://casmir293.github.io/cbtdatabase/db.json"
+        );
         const data = await response.json();
         this.questions = data.questions;
       } catch (error) {
