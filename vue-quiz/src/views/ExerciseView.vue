@@ -93,10 +93,11 @@ const correctScore = ref(0);
 const wrongAnswer = ref(0);
 const unAnswered = ref(0);
 
+// Shuffle the questions and select the first 20.
 const shuffleQuestions = () => {
-  shuffledQuestions.value = [...questionStore.questions].sort(
-    () => Math.random() - 0.5
-  );
+  const allQuestions = [...questionStore.questions];
+  const shuffledAllQuestions = allQuestions.sort(() => Math.random() - 0.5);
+  shuffledQuestions.value = shuffledAllQuestions.slice(0, 20);
 };
 
 watch(questionStore.questions, () => {
