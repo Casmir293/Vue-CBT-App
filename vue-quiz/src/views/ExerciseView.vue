@@ -22,9 +22,10 @@
           <p class="question-number">
             <b>Question {{ currentQuestionIndex + 1 }} of 20</b>
           </p>
-          <p>{{ currentQuestion.questionText }}</p>
+          <p class="current-question">{{ currentQuestion.questionText }}</p>
           <form>
             <div
+              class="options"
               v-for="(option, index) in currentQuestion.options"
               :key="index"
             >
@@ -208,6 +209,14 @@ main {
   padding: 0px 15px;
   line-height: 1.5;
   background-color: hsla(211, 28%, 29%, 0.1);
+}
+
+.current-question {
+  margin-bottom: 15px;
+}
+
+.options {
+  margin-bottom: 7px;
 }
 
 .question-number {
