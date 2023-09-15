@@ -1,0 +1,701 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "questionText": "What is the main purpose of the 'data' instance in a Vue component?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To define variables",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "To define methods for the component",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To define computed properties",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To handle user interactions",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "questionText": "What does Vue.js use for building user interfaces?",
+      "options": [
+        {
+          "id": "a",
+          "text": "React",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Angular",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Vue CLI",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Virtual DOM",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "questionText": "Which directive is used to bind an attribute to an expression in Vue.js?",
+      "options": [
+        {
+          "id": "a",
+          "text": ":bind",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "v-model",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "v-bind",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "v-attr",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "questionText": "How do you define a computed property in Vue",
+      "options": [
+        {
+          "id": "a",
+          "text": "As a method inside the 'computed' instance",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "As a method inside the 'methods' instance",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "As a variable inside the 'computed' instance",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "As a variable inside the 'methods' instance",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "questionText": "Which Vue directive is used to conditionally display an element?",
+      "options": [
+        {
+          "id": "a",
+          "text": "v-for",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "v-model",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "v-bind",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "v-show",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "questionText": "Which language is Vue written in?",
+      "options": [
+        {
+          "id": "a",
+          "text": "C",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "C++",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Python",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "JavaScript",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "questionText": "Which Vue directive is used to conditionally render an element?",
+      "options": [
+        {
+          "id": "a",
+          "text": "v-model",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "v-bind",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "v-for",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "v-if",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "questionText": "Which Vue directive is used for list rendering?",
+      "options": [
+        {
+          "id": "a",
+          "text": "v-for",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "v-show",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "v-if",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "v-bind",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "questionText": "The v-bind directive is used to attatch an HTML attribute to a data property.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "No",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Most times",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Sometimes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "questionText": "Which Vue directive is used to create a two-way binding between a form input and a data property?",
+      "options": [
+        {
+          "id": "a",
+          "text": "v-bind",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "v-show",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "v-model",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "v-for",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "questionText": "We can make a 'watcher' in Vue to monitor a data property and create side effects.",
+      "options": [
+        {
+          "id": "a",
+          "text": "There is no such thing as watchers in Vue.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "No, watchers can only monitor data properties and never create side effects",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Yes, watchers are made to create side effects when a monitored data property reaches a certain point, that is the intention",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "questionText": "When a 'watcher' runs, both the old and the new data property values are available as arguments to the watcher method.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only the new data property value is available",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Only the old data property value is available",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Neither the old nor the new data property values are available",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Yes",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "questionText": "What is the correct syntax to display the value from the data property ‘message’ inside a <p> tag with text interpolation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "<p>// message //</p>",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "<p>## message ##</p>",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "<p>{{ message }}</p>",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "<p>'' message ''</p>",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "questionText": "What is the main purpose of the 'mounted' lifecycle hook in a Vue component?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To watch data property changes",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To define computed properties",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To define the component's slots before the component is rendered",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To perform side effects after the component has been inserted into the DOM ",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "questionText": "Vue uses a file to initialize the root Vue instance and mount it to the DOM, what is the file's name?",
+      "options": [
+        {
+          "id": "a",
+          "text": "main.js",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "views.js",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "settings.js",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "config.js",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "questionText": "In which lifecycle hook is the DOM accessible and ready for manipulation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "created",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "beforeMount",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "mounted",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "beforeCreate",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "questionText": "What is the purpose of the provide() method?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To make data locally available to a specific parent component",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To keep methods local to a single component",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To make a strict interface of data shared between components",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To make data available to other components",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "questionText": "What is the purpose of the inject() method?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To create a global function",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To get data in a component that is provided by another component",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "To include 3rd party libraries",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To smoothly integrate the iframe tag in Vue",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "questionText": "What is the purpose of the 'errorCaptured' lifecycle hook?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To handle errors thrown in component methods",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "To handle errors thrown in component watchers",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "To handle errors thrown in component lifecycle hooks",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "To handle errors thrown in any of the cases mentioned",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "questionText": "How can you add a transition effect to an element in Vue?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Using the transition() method",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Using the <Transition> wrapper element ",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Transitions are not supported in Vue",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Using the v-transition directive",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "questionText": "Which special Vue attribute is recommended to provide when generating elements with v-for?",
+      "options": [
+        {
+          "id": "a",
+          "text": "key",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "note",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "elementID",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "number",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "questionText": "What command do we need to write to run our Vue project in developer mode?",
+      "options": [
+        {
+          "id": "a",
+          "text": "run vue in developer mode",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "npm run vue",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "compile to dev",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "run dev mode",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "questionText": "What attribute must be used to make the CSS rules inside the <style> tag of a component local to only that specific component?",
+      "options": [
+        {
+          "id": "a",
+          "text": "<style onlyHere>",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "<style local>",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "<style scoped>",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "<style this>",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "questionText": "How is data passed to a component using props?",
+      "options": [
+        {
+          "id": "a",
+          "text": "as a method",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "as a special attribute",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "as a special wrapper tag",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "as text between the components start tag and end tag",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "questionText": "In what ways can we pass data from a parent to a child component?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fallthrough Attributes",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "All of the techniques mentioned",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Provide/Inject",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Props",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "questionText": "Which special tag is used to make dynamic components in Vue?",
+      "options": [
+        {
+          "id": "a",
+          "text": "<component> ",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "<Slot> ",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "<KeepAlive>",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "<DynamicComponent>",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "questionText": "Which attribute is used with the <component> tag so that we can switch between components?",
+      "options": [
+        {
+          "id": "a",
+          "text": "componentName",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "switch",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "is",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "dynamic",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}
